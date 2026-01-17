@@ -8,7 +8,7 @@ def multiply(a, b):
     return a*b
 
 def divide(a, b):
-    if a == 0:
+    if b == 0:
         return "Error: division by 0 is impermissible"
     return a / b
 
@@ -26,12 +26,16 @@ while True:
         print("Thank you for using the calculator!")
         break
 
+    if choice not in ["1", "2", "3", "4"]:
+        print("Invalid choice. Please select from the menu.")
+        continue
+
     try:
         a = float(input("Enter first number: "))
         b = float(input("Enter second number: "))
     except ValueError:
         print("Invalid input. Please enter numbers only.")
-        continue  
+        continue
     
     if choice == "1":
         print("Result:", add(a, b))
